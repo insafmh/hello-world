@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Panierrs list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Datamod</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for panierr in panierrs %}
+            <tr>
+                <td><a href="{{ path('panierr_show', { 'id': panierr.id }) }}">{{ panierr.id }}</a></td>
+                <td>{% if panierr.dataMod %}{{ panierr.dataMod|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('panierr_show', { 'id': panierr.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('panierr_edit', { 'id': panierr.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('panierr_new') }}">Create a new panierr</a>
+        </li>
+    </ul>
+{% endblock %}

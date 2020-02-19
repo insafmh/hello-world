@@ -1,0 +1,27 @@
+{% extends 'baseback.html.twig' %}
+{% block content %}
+    <h1>Panierr</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ panierr.id }}</td>
+            </tr>
+            <tr>
+                <th>Datamod</th>
+                <td>{% if panierr.dataMod %}{{ panierr.dataMod|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('panier_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="#">Edit</a>
+        </li>
+
+    </ul>
+{% endblock %}

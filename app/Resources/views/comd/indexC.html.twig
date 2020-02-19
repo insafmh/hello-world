@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Comds list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Prixtot</th>
+                <th>Datecommande</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for comd in comds %}
+            <tr>
+                <td><a href="{{ path('comd_show', { 'id': comd.id }) }}">{{ comd.id }}</a></td>
+                <td>{{ comd.prixTot }}</td>
+                <td>{% if comd.dateCommande %}{{ comd.dateCommande|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('comd_show', { 'id': comd.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('comd_edit', { 'id': comd.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('comd_new') }}">Create a new comd</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,52 @@
+gestion_com_homepage:
+    path:     /
+    defaults: { _controller: GestionComBundle:Default:index }
+
+commande_Affiche:
+    path:     /AfficheCommande
+    defaults: { _controller: GestionComBundle:comd:index }
+
+commande_excel:
+    path:     /excel
+    defaults: { _controller: GestionComBundle:comd:excel }
+
+
+commande_show:
+    path:     /{id}/show
+    defaults: { _controller: GestionComBundle:comd:show }
+
+commande_new:
+    path:     /new
+    defaults: { _controller: GestionComBundle:comd:new }
+
+comd_delete:
+    path:     /{id}/delete
+    defaults: { _controller: GestionComBundle:comd:delete }
+
+
+
+commande_edit:
+    path:     /{id}/edit
+    defaults: { _controller: GestionComBundle:comd:edit }
+
+
+
+panier_index:
+    path:     /affichepanier
+    defaults: { _controller: GestionComBundle:panierr:index }
+
+panierr_new:
+    path:     /ajouterpanier
+    defaults: { _controller: GestionComBundle:panierr:new }
+
+panierr_show:
+    path:     /showpanier/{id}
+    defaults: { _controller: GestionComBundle:panierr:show }
+
+panierr_edit:
+    path:     /paniers/{id}/edit
+    defaults: { _controller: GestionComBundle:panierr:edit }
+
+paniers_delete:
+    path:     /paniers/{id}/delete
+    defaults: { _controller: GestionComBundle:panierr:delete }

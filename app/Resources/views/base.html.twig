@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MoonStore</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="e-commerce site well design with responsive view." />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="{{ asset('Front/') }}image/favicon.png" rel="icon" type="image/png">
+    <link href="{{ asset('Front/') }}css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <link href="{{ asset('Front/') }}javascript/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700,900' rel='stylesheet' type='text/css'>
+    <link href="{{ asset('Front/') }}https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="{{ asset('Front/') }}css/stylesheet.css" rel="stylesheet">
+    <link href="{{ asset('Front/') }}css/responsive.css" rel="stylesheet">
+    <link href="{{ asset('Front/') }}javascript/owl-carousel/owl.carousel.css" type="text/css" rel="stylesheet" media="screen" />
+    <link href="{{ asset('Front/') }}javascript/owl-carousel/owl.transitions.css" type="text/css" rel="stylesheet" media="screen" />
+    <script type="text/javascript" src="{{ asset('Front/') }}javascript/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="{{ asset('Front/') }}javascript/bootstrap/js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="{{ asset('Front/') }}javascript/template_js/jstree.min.js"></script>
+    <script type="text/javascript" src="{{ asset('Front/') }}javascript/template_js/template.js"></script>
+    <script type="text/javascript" src="{{ asset('Front/') }}javascript/common.js" ></script>
+    <script type="text/javascript" src="{{ asset('Front/') }}javascript/global.js"></script>
+    <script type="text/javascript" src="{{ asset('Front/') }}javascript/owl-carousel/owl.carousel.min.js"></script>
+</head>
+<body class="index">
+<div class="preloader loader" style="display: block;"> <img src="{{ asset('Front/') }}image/loader.gif"  alt="#"/></div>
+<header>
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="top-left pull-left">
+                        <div class="wel-come-msg"> Welcome to our online store! </div>
+                        <div class="language">
+                            <form action="#" method="post" enctype="multipart/form-data" id="language">
+                                <div class="btn-group">
+                                    <button class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> English <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ asset('Front/') }}#">Arabic</a></li>
+                                        <li><a href="{{ asset('Front/') }}#"> English</a></li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="currency">
+                            <form action="#" method="post" enctype="multipart/form-data" id="currency">
+                                <div class="btn-group">
+                                    <button class="btn btn-link dropdown-toggle" data-toggle="dropdown"> <strong>USD</strong> <span class="caret"></span> </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ asset('Front/') }}#">Euro</a></li>
+                                        <li><a href="{{ asset('Front/') }}#">Pound</a></li>
+                                        <li><a href="{{ asset('Front/') }}#">USD</a></li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="top-right pull-right">
+                        <div id="top-links" class="nav pull-right">
+                            <ul class="list-inline">
+                                <li class="dropdown"><a href="{{ asset('Front/') }}#" title="My Account" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span>My Account</span> <span class="caret"></span></a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="{{ path('fos_user_registration_register') }}">Register</a></li>
+                                        <li><a href="{{ path('fos_user_security_login') }}">Login</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="{{ asset('Front/') }}#" id="wishlist-total" title="Wish List (0)"><i class="fa fa-heart" aria-hidden="true"></i><span>Wish List</span><span> (0)</span></a></li>
+                            </ul>
+                            <div id="search" class="input-group">
+                                <input type="text" name="search" value="" placeholder="Search" class="form-control input-lg" />
+                                <span class="input-group-btn">
+                <button type="button" class="btn btn-default btn-lg"><i class="fa fa-search"></i></button>
+                </span> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header-inner">
+            <div class="col-sm-3 col-xs-3 header-left">
+                <div id="logo"> <a href="{{ asset('Front/') }}index.html"><img src="{{ asset('Front/') }}image/logo.png" title="E-Commerce" alt="E-Commerce" class="img-responsive" /></a> </div>
+            </div>
+            <div class="col-sm-9 col-xs-9 header-right">
+                <nav id="menu" class="navbar">
+                    <div class="nav-inner">
+                        <div class="navbar-header"><span id="category" class="visible-xs">Categories</span>
+                            <button type="button" class="btn btn-navbar navbar-toggle" ><i class="fa fa-bars"></i></button>
+                        </div>
+                        <div class="navbar-collapse pull-left">
+                            <ul class="main-navigation">
+                                <li><a href="{{ asset('Front/') }}index.html"   class="parent"  >Home</a> </li>
+                                <li><a href="{{ asset('Front/') }}category.html"   class="parent"  >Auto</a> </li>
+                                <li><a href="{{ asset('Front/') }}#" class="active parent">Page</a>
+                                    <ul>
+                                        <li><a href="{{ asset('Front/') }}category.html">Category Page</a></li>
+                                        <li><a href="{{ asset('Front/') }}cart.html">Cart Page</a></li>
+                                        <li><a href="{{ asset('Front/') }}checkout.html">Checkout Page</a></li>
+                                        <li><a href="{{ asset('Front/') }}blog.html" >Blog Page</a></li>
+                                        <li><a href="{{ asset('Front/') }}single-blog.html" >Singale Blog Page</a></li>
+                                        <li><a href="{{ asset('Front/') }}register.html">Register Page</a></li>
+                                        <li><a href="{{ asset('Front/') }}contact.html">Contact Page</a></li>
+                                        <li><a href="{{ asset('Front/') }}affiliate.html">Affiliate</a></li>
+                                        <li><a href="{{ asset('Front/') }}forgetpassword.html">Forget Password</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="{{ asset('Front/') }}blog.html" class="parent"  >Blog</a></li>
+                                <li><a href="{{ asset('Front/') }}about-us.html" >About us</a></li>
+                                <li><a href="{{ asset('Front/') }}contact.html" >Contact Us</a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div id="cart" class="btn-group btn-block">
+                    <button type="button" class="btn btn-inverse btn-block btn-lg dropdown-toggle cart-dropdown-button"> <span id="cart-total"><span>Shopping Cart</span><br>
+          3 item(s) - $254.00</span></button>
+                    <ul class="dropdown-menu pull-right cart-dropdown-menu">
+                        <li>
+                            <table class="table table-striped">
+                                <tbody>
+                                <tr>
+                                    <td class="text-center"><a href="{{ asset('Front/') }}#"><img class="img-thumbnail" title="lorem ippsum dolor dummy" alt="lorem ippsum dolor dummy" src="{{ asset('Front/') }}image/product/7product56x72.jpg"></a></td>
+                                    <td class="text-left"><a href="{{ asset('Front/') }}#">lorem ippsum dolor dummy</a></td>
+                                    <td class="text-right">x 1</td>
+                                    <td class="text-right">$254.00</td>
+                                    <td class="text-center"><button class="btn btn-danger btn-xs" title="Remove" type="button"><i class="fa fa-times"></i></button></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                        <li>
+                            <table class="table table-striped">
+                                <tbody>
+                                <tr>
+                                    <td class="text-center"><a href="{{ asset('Front/') }}#"><img class="img-thumbnail" title="lorem ippsum dolor dummy" alt="lorem ippsum dolor dummy" src="{{ asset('Front/') }}image/product/7product56x72.jpg"></a></td>
+                                    <td class="text-left"><a href="{{ asset('Front/') }}#">lorem ippsum dolor dummy</a></td>
+                                    <td class="text-right">x 1</td>
+                                    <td class="text-right">$254.00</td>
+                                    <td class="text-center"><button class="btn btn-danger btn-xs" title="Remove" type="button"><i class="fa fa-times"></i></button></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                        <li>
+                            <table class="table table-striped">
+                                <tbody>
+                                <tr>
+                                    <td class="text-center"><a href="{{ asset('Front/') }}#"><img class="img-thumbnail" title="lorem ippsum dolor dummy" alt="lorem ippsum dolor dummy" src="{{ asset('Front/') }}image/product/7product56x72.jpg"></a></td>
+                                    <td class="text-left"><a href="{{ asset('Front/') }}#">lorem ippsum dolor dummy</a></td>
+                                    <td class="text-right">x 1</td>
+                                    <td class="text-right">$254.00</td>
+                                    <td class="text-center"><button class="btn btn-danger btn-xs" title="Remove" type="button"><i class="fa fa-times"></i></button></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                        <li>
+                            <div>
+                                <table class="table table-bordered">
+                                    <tbody>
+                                    <tr>
+                                        <td class="text-right"><strong>Sub-Total</strong></td>
+                                        <td class="text-right">$210.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right"><strong>Eco Tax (-2.00)</strong></td>
+                                        <td class="text-right">$2.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right"><strong>VAT (20%)</strong></td>
+                                        <td class="text-right">$42.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right"><strong>Total</strong></td>
+                                        <td class="text-right">$254.00</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <p class="text-right"> <span class="btn-viewcart"><a href="{{ asset('Front/') }}cart.html"><strong><i class="fa fa-shopping-cart"></i> View Cart</strong></a></span> <span class="btn-checkout"><a href="{{ asset('Front/') }}checkout.html"><strong><i class="fa fa-share"></i> Checkout</strong></a></span> </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% block content %}
+{% endblock %}
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 footer-block">
+                <h5 class="footer-title">Information</h5>
+                <ul class="list-unstyled ul-wrapper">
+                    <li><a href="{{ asset('Front/') }}contact.html">About Us</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Delivery Information</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Privacy Policy</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Terms & Conditions</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Wish List</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Gift Certificates</a></li>
+                    <li><a href="{{ asset('Front/') }}#">View Cart</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Order History</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Specials</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 footer-block">
+                <h5 class="footer-title">My Account</h5>
+                <ul class="list-unstyled ul-wrapper">
+                    <li><a href="{{ asset('Front/') }}contact.html">Contact Us</a></li>
+                    <li><a href="{{ asset('Front/') }}#">My Account</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Order History</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Wish List</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Newsletter</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Gift Certificates</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Brands</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Specials</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Affiliates</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 footer-block">
+                <h5 class="footer-title">Extras</h5>
+                <ul class="list-unstyled ul-wrapper">
+                    <li><a href="{{ asset('Front/') }}#">Delivery information</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Privacy Policy</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Terms & Conditions</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Contact us</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Sitemap</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Product Recall</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Gift Vouchers</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Help & FAQs</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Sale Only Today</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 footer-block">
+                <div class="content_footercms_right">
+                    <div class="footer-contact">
+                        <h5 class="contact-title footer-title">Contact Us</h5>
+                        <ul class="ul-wrapper">
+                            <li><i class="fa fa-map-marker"></i><span class="location2">Offices Addresss:<br>
+                218,Drimlend Building<br>
+                Sarthana jakatnaka, Surat City <br>
+                Gujarat-395013  INDIA</span></li>
+                            <li><i class="fa fa-envelope"></i><span class="mail2"><a href="{{ asset('Front/') }}#">info@localhost.com</a><br>
+                <a href="{{ asset('Front/') }}#">your@domain.com</a></span></li>
+                            <li><i class="fa fa-mobile"></i><span class="phone2">+91 0987-654-321<br>
+                +91 0987-654-321</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div id="bottom-footer">
+                <ul class="footer-link">
+                    <li><a href="{{ asset('Front/') }}#">Home</a></li>
+                    <li><a href="{{ asset('Front/') }}#">About</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Work</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Team</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Pricing</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Blog</a></li>
+                    <li><a href="{{ asset('Front/') }}#">Contact</a></li>
+                </ul>
+                <div class="copyright"> Copyright - <a class="yourstore" href="{{ asset('Front/') }}http://www.lionode.com/"> Created by Lionode &copy; 2017 </a></div>
+                <div class="footer-bottom-cms">
+                    <div class="footer-payment">
+                        <ul>
+                            <li class="mastero"><a href="{{ asset('Front/') }}#"><img alt="" src="{{ asset('Front/') }}image/payment/mastero.jpg"></a></li>
+                            <li class="visa"><a href="{{ asset('Front/') }}#"><img alt="" src="{{ asset('Front/') }}image/payment/visa.jpg"></a></li>
+                            <li class="currus"><a href="{{ asset('Front/') }}#"><img alt="" src="{{ asset('Front/') }}image/payment/currus.jpg"></a></li>
+                            <li class="discover"><a href="{{ asset('Front/') }}#"><img alt="" src="{{ asset('Front/') }}image/payment/discover.jpg"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="scrollup">Scroll</a> </footer>
+</body>
+</html>

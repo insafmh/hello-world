@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Panier_produit</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ panier_Produit.id }}</td>
+            </tr>
+            <tr>
+                <th>Qte</th>
+                <td>{{ panier_Produit.qte }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('panier_produit_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('panier_produit_edit', { 'id': panier_Produit.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
